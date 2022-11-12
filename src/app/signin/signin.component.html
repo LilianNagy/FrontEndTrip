@@ -13,12 +13,12 @@
                
 
                 <div class="form-outline mb-4">
-                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
+                  <input [(ngModel)]="admin.username" name="username" type="text"  id="form3Example3cg" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example3cg">Your Email or username</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                  <input [(ngModel)]="admin.password" name="password" type="text"  id="form3Example4cg" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example4cg">Password</label>
                 </div>
 
@@ -28,7 +28,7 @@
 
                 <div class="d-flex justify-content-center">
                   <a href="/trip">
-                    <button type="button"
+                    <button type="button" (click)="login()"
                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Login</button>
                   </a>
                  

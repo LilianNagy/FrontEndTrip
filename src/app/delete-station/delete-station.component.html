@@ -11,16 +11,12 @@
               <form>
 
                 <div class="form-outline mb-4">
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>choose station id</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                  </select>
+                  <input [(ngModel)]="newStation.id" name="id" id="id" type="number" id="form2Example1" class="form-control" />
+                    <label class="form-label" for="form2Example1"> To Staion</label>
                     
                   </div>
                 <div class="d-flex justify-content-center">
-                  <button type="button"
+                  <button type="button" (click)="deletestation()"
                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Delete</button>
                 </div>
 

@@ -10,7 +10,7 @@ style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/
           <div class="card-body p-5">
             <h2 class="text-uppercase text-center mb-5">Create a station</h2>
 
-            <form>
+            <section>
 
               <div class="form-outline mb-4">
                 <select class="form-select form-select-sm" aria-label=".form-select-sm example">
@@ -21,33 +21,20 @@ style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/
                 </select>
                   
                 </div>
-
-
-                
-          
-              
-
-             
-
               <div class="form-outline mb-4">
-                  <input type="email" id="form2Example1" class="form-control" />
+                  <input [(ngModel)]="newStation.name" name="name" type="text" id="form2Example1" class="form-control" />
                   <label class="form-label" for="form2Example1"> Staion Name </label>
                 </div>
 
 
-              <div class="form-outline mb-4">
-                  <input type="email" id="form2Example1" class="form-control" />
-                  <label class="form-label" for="form2Example1"> Staion Location</label>
-                </div>
-
               <div class="d-flex justify-content-center">
-                <button type="button"
+                <button type="button" (click)="createnewstation()"
                   class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Create</button>
               </div>
 
               
 
-            </form>
+            </section>
 
           </div>
         </div>

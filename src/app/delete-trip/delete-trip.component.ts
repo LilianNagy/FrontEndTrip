@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Trip } from '../trip';
+import { TripService } from '../trip.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @Component({
   selector: 'app-delete-trip',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteTripComponent implements OnInit {
 
-  constructor() { }
+  newtrip:Trip={tripid:0,startTime:"",endTime:"",fromStation:"",toStation:""};
+  constructor( private http:HttpClientModule , private tripservice:TripService) { }
 
   ngOnInit(): void {
   }
+  deletetrip(){
+    this.tripservice.deletetrip(this.newtrip.tripid).subscribe(data=>{
+      console.log(data)})
 
+    }
 }

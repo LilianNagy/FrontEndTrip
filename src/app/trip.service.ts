@@ -17,18 +17,19 @@ private http:HttpClient
   return this.http.post<Trip>('http://localhost:8080/api/addTrip',newtrip)
 
  }
+ 
  getalltrips():Observable<Trip[]>{
   return this.http.get<Trip[]>('http://localhost:8080/api/getTrip')
 
  }
  updatetrip(updatedtrip:Trip,tripid:number):Observable< Object>{
 
- return this.http.put<Trip>(`http://localhost:8080/api/updateTrip%7BtripId%7D/${tripid}`,updatedtrip)
+ return this.http.put<Trip>('http://localhost:8080/api/updateTrip/' +tripid+"?NewFromStation="+updatedtrip.fromStation,updatedtrip)
  }
  
  deletetrip(tripid:number):Observable< Object>{
 
-  return this.http.delete<Trip>(`http://localhost:8080/api/deleteTrip%7BtripId%7D/${tripid}`)
+  return this.http.delete<Trip>('http://localhost:8080/api/deleteTrip/'+tripid)
   }
 
 

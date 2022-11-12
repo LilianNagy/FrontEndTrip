@@ -1,6 +1,6 @@
-export class Station {
+export interface Station {
 
-stationid=0;
-stationname="";
+id: number;
+name:string;
 
 }

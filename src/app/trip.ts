@@ -1,9 +1,9 @@
-export class Trip {
+export interface Trip {
 
-tripid=0;
-starttime="";
-endttime="";
-fromstation="";
-tostation="";
+tripid:number;
+startTime:string;
+endTime:string;
+fromStation:string;
+toStation:string;
 
 }

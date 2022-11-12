@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Station } from '../station';
+import { HttpClientModule } from '@angular/common/http';
+import { StationService } from '../station.service';
 
 @Component({
   selector: 'app-showall-stations',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowallStationsComponent implements OnInit {
 
-  constructor() { }
+  newStation:Station={ id:0, name:""};
+  constructor( private http:HttpClientModule , private stationservice:StationService){
+
+  };
 
   ngOnInit(): void {
   }
+  showallstation(){
+    this.stationservice.getallstation().subscribe(data=>{
+      console.log(data)})
 
+    }
 }

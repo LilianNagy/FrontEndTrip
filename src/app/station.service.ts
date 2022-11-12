@@ -16,18 +16,18 @@ export class StationService {
       return this.http.post<Station>('http://localhost:8080/api/addStation',newStation)
     
      }
-     getalltrips():Observable<Station[]>{
+     getallstation():Observable<Station[]>{
       return this.http.get<Station[]>('http://localhost:8080/api/getStation')
     
      }
-     updatetrip(updatedstation:Station,stationid:number):Observable< Object>{
+     updatestation(updatedstation:Station,stationid:number):Observable< Object>{
     
-     return this.http.put<Station>(`http://localhost:8080/api/updateStation{stationId}/${stationid}`,updatedstation)
+     return this.http.put<Station>('http://localhost:8080/api/updateStation/'+stationid+"?name="+updatedstation.name,updatedstation)
      }
      
-     deletetrip(stationid:number):Observable< Object>{
+     deleteStation(id:number):Observable< Object>{
     
-     return this.http.delete<Station>(`http://localhost:8080/api/deleteStation{stationId}/${stationid}`)
+     return this.http.delete<Station>('http://localhost:8080/api/deleteStation/'+id)
       }
   
 }

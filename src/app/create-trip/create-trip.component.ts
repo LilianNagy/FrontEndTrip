@@ -9,7 +9,7 @@ import {HttpClientModule} from '@angular/common/http';
   styleUrls: ['./create-trip.component.css']
 })
 export class CreateTripComponent implements OnInit {
-  newtrip:Trip=new Trip()
+  newtrip:Trip={tripid:0,startTime:"",endTime:"",fromStation:"",toStation:""};
   constructor( private http:HttpClientModule , private tripservice:TripService) { }
 
   ngOnInit(): void {

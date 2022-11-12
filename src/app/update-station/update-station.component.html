@@ -16,18 +16,18 @@
                
 
                 <div class="form-outline mb-4">
-                    <input type="email" id="form2Example1" class="form-control" />
-                    <label class="form-label" for="form2Example1"> Update Staion Name</label>
+                    <input [(ngModel)]="newStation.id" name="name" type="text"type="email" id="form2Example1" class="form-control" />
+                    <label class="form-label" for="form2Example1"> Station Id</label>
                   </div>
 
 
                 <div class="form-outline mb-4">
-                    <input type="email" id="form2Example1" class="form-control" />
-                    <label class="form-label" for="form2Example1">Update Staion Location</label>
+                    <input [(ngModel)]="newStation.name" name="name" type="text" type="email" id="form2Example1" class="form-control" />
+                    <label class="form-label" for="form2Example1">Station new name</label>
                   </div>
 
                 <div class="d-flex justify-content-center">
-                  <button type="button"
+                  <button type="button" (click)="updatestation()"
                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Update</button>
                 </div>
 
