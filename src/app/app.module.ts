@@ -8,6 +8,8 @@ import { CreateStationComponent } from './create-station/create-station.componen
 import { UpdateStationComponent } from './update-station/update-station.component';
 import { DeleteStationComponent } from './delete-station/delete-station.component';
 import { ShowallStationsComponent } from './showall-stations/showall-stations.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
  
 @NgModule({
@@ -25,7 +27,9 @@ import { ShowallStationsComponent } from './showall-stations/showall-stations.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
