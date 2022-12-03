@@ -10,16 +10,19 @@ import { StationService } from '../station.service';
 })
 export class ShowallStationsComponent implements OnInit {
 
-  newStation:Station={ id:0, name:""};
+  allStation:Station[]=[];
   constructor( private http:HttpClientModule , private stationservice:StationService){
 
   };
 
   ngOnInit(): void {
+    this.showallstation();
   }
   showallstation(){
-    this.stationservice.getallstation().subscribe(data=>{
-      console.log(data)})
+    this.stationservice.getallstation().subscribe((data)=>{
+      this.allStation=data})
+
+      
 
     }
 }

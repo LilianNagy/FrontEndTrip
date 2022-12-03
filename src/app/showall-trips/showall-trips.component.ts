@@ -10,18 +10,19 @@ import {HttpClientModule} from '@angular/common/http';
 })
 export class ShowallTripsComponent implements OnInit {
 
-  newTrip:Trip={tripid:0,startTime:"",endTime:"",fromStation:"",toStation:""};
+  allTrip:Trip[]=[];
   constructor( private http:HttpClientModule , private tripservice:TripService){
 
   };
 
   ngOnInit(): void {
+    this.showalltrip();
   }
   
   showalltrip(){
 
-    this.tripservice.getalltrips().subscribe(data=>{
-      console.log(data)})
+    this.tripservice.getalltrips().subscribe((data)=>{
+      this.allTrip=data})
 
   }
 
