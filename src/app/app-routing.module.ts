@@ -24,7 +24,10 @@ const routes: Routes = [
 {path:'createstation',component: CreateStationComponent},
 {path:'deletestation',component:DeleteStationComponent},
 {path:'updatestation',component: UpdateStationComponent},
-{path:'showallstations',component: ShowallStationsComponent}
+{path:'showallstations',component: ShowallStationsComponent},
+{path:'**',redirectTo:'signup',pathMatch:'full'},
+{path:'',redirectTo:'signup',pathMatch:'full'},
+
 
 ];
 
