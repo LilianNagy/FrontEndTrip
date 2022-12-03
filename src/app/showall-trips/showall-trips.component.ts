@@ -21,8 +21,9 @@ export class ShowallTripsComponent implements OnInit {
   
   showalltrip(){
 
-    this.tripservice.getalltrips().subscribe((data)=>{
-      this.allTrip=data})
+    this.tripservice.getalltrips().subscribe((data) => {
+      this.allTrip=data;
+    });
 
   }
 

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Station } from './station';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,21 +14,21 @@ export class StationService {
       ) { }
      createstation(newStation:Station):Observable<Object>{
     
-      return this.http.post<Station>('http://localhost:8080/api/addStation',newStation)
+      return this.http.post<Station>(`${environment.apiUrl}/api/addStation`,newStation)
     
      }
      getallstation():Observable<Station[]>{
-      return this.http.get<Station[]>('http://localhost:8080/api/getStation')
+      return this.http.get<Station[]>(`${environment.apiUrl}/api/getStation`)
     
      }
      updatestation(updatedstation:Station,stationid:number):Observable< Object>{
     
-     return this.http.put<Station>('http://localhost:8080/api/updateStation/'+stationid+"?name="+updatedstation.name,updatedstation)
+     return this.http.put<Station>(`${environment.apiUrl}/api/updateStation/`+stationid+"?name="+updatedstation.name,updatedstation)
      }
      
      deleteStation(id:number):Observable< Object>{
     
-     return this.http.delete<Station>('http://localhost:8080/api/deleteStation/'+id)
+     return this.http.delete<Station>(`${environment.apiUrl}/api/deleteStation/`+id)
       }
   
 }
